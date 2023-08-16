@@ -1,27 +1,29 @@
 class Singleton {
     constructor() {
-      if (!Singleton.instance) {
-        Singleton.instance = this;
-      }
-      return Singleton.instance;
+        if (!Singleton.instance) {
+            Singleton.instance = this;
+        }
+        return Singleton.instance;
     }
-  
+
     sayHello() {
-      console.log("Hello, I am the Singleton instance!");
+        console.log("Hello, I am the Singleton instance!");
     }
-  }
-  
-  // Usage
-  const instance1 = new Singleton();
-  instance1.sayHello(); // Output: "Hello, I am the Singleton instance!"
-  
-  const instance2 = new Singleton();
-  instance2.sayHello(); // Output: "Hello, I am the Singleton instance!"
-  
-  console.log(instance1 === instance2); // Output: true
+}
+
+// Usage
+const instance1 = new Singleton();
+instance1.sayHello(); // Output: "Hello, I am the Singleton instance!"
+
+const instance2 = new Singleton();
+instance2.sayHello(); // Output: "Hello, I am the Singleton instance!"
+
+console.log(instance1 === instance2); // Output: true
 
 
-//////////////////////////// other example ////////////////////////////
+
+// --------------------------------------------- other example ---------------------------------------------
+
 
 
 class Restaurant {
@@ -35,7 +37,7 @@ class Restaurant {
     }
 
     getReservations() {
-        return this.reservations;   
+        return this.reservations;
     }
 }
 
@@ -43,7 +45,7 @@ class Restaurant {
 class ReservationManager {
     constructor() {
         if (!ReservationManager.instance) {
-        ReservationManager.instance = this;
+            ReservationManager.instance = this;
         }
         this.restaurant = new Restaurant("Sample Restaurant");
         return ReservationManager.instance;
