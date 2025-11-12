@@ -21,7 +21,7 @@
 // class Adapter extends Target {
 //   constructor() {
 //     super();
-//     // this.adaptee = new Adaptee();
+//       this.adaptee = new Adaptee();
 //   }
 
 //   request() {
@@ -40,53 +40,44 @@
 // -------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-// stateAdapter.js
-class StateAdapter {
-  constructor(initialState = {}) {
-    this.state = initialState;
-    this.listeners = [];
-  }
-
-  // Get current state
-  getState() {
-    return { ...this.state };
-  }
-
-  // Update state
-  setState(newState) {
-    this.state = { ...this.state, ...newState };
-    this.notify();
-  }
-
-  // Subscribe to state changes
-  subscribe(listener) {
-    this.listeners.push(listener);
-    return () => {
-      this.listeners = this.listeners.filter(l => l !== listener);
-    };
-  }
-
-  // Notify all subscribers
-  notify() {
-    this.listeners.forEach(listener => listener(this.getState()));
+// --- Old System (Legacy / Third-party) ---
+class OldPaymentSystem {
+  sendPayment(amountInCents) {
+    console.log(`Processing payment of ${amountInCents} cents via OldPaymentSystem`);
   }
 }
 
-// Usage example
-const appState = new StateAdapter({ counter: 0 });
+// --- Target Interface (what the client expects) ---
+class Payment {
+  pay(amountInDollars) {
+    throw new Error(`input: ${amountInDollars} - Error:Method not implemented`);
+  }
+}
 
-// Subscribe to changes
-const unsubscribe = appState.subscribe(state => {
-  console.log('State updated:', state);
-});
+// --- Adapter ---
+class PaymentAdapter extends Payment {
+  constructor(oldPaymentSystem) {
+    super();
+    this.oldPaymentSystem = oldPaymentSystem;
+  }
 
-// Update state
-appState.setState({ counter: appState.getState().counter + 1 });
-appState.setState({ counter: appState.getState().counter + 1 });
+  pay(amountInDollars) {
+    const amountInCents = amountInDollars * 100;
+    this.oldPaymentSystem.sendPayment(amountInCents);
+  }
+}
 
-// Stop listening
-unsubscribe();
+// --- Client Code ---
+function processPayment(payment, amount) {
+  payment.pay(amount);
+}
 
-// Another update (no log because unsubscribed)
-appState.setState({ counter: 100 });
+// --- Usage ---
+const oldSystem = new OldPaymentSystem();
+const adapter = new PaymentAdapter(oldSystem);
+
+
+processPayment(adapter, 50); // Output: Processing payment of 5000 cents via OldPaymentSystem
+
+
+// -------------------------------------------------------------------------------------------------------------------------------------
