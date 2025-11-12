@@ -1,3 +1,11 @@
+/**
+    Definition:
+        - Observer Pattern is a behavioral design pattern in software engineering.
+        - It allows one object to observe and react to changes in another object.
+        - It is used to implement the "one-to-many" relationship between objects.
+*/
+
+
 // // Subject (Course)
 // class Course {
 //     constructor(name) {
@@ -49,17 +57,17 @@
 // const student2 = new Student("Monty");
 // const student3 = new Student("Mans");
 
-// course.enroll(student1); // John: Enrollment status changed for JavaScript
+// course.enroll(student1); // Montaser: Enrollment status changed for JavaScript
 // console.log("--------------------------------------------------------------------------------");
-// course.enroll(student2); // Jane: Enrollment status changed for JavaScript
+// course.enroll(student2); // Monty: Enrollment status changed for JavaScript
 // console.log("--------------------------------------------------------------------------------");
-// course.enroll(student3); // John: Enrollment status changed for JavaScript
-// console.log("--------------------------------------------------------------------------------");
-
-// course.cancelEnrollment(student1); // John: Enrollment status changed for JavaScript
+// course.enroll(student3); // Mans: Enrollment status changed for JavaScript
 // console.log("--------------------------------------------------------------------------------");
 
-// course.setAvailability(false); // John: Enrollment status changed for JavaScript
+// course.cancelEnrollment(student1); // Montaser: Enrollment status changed for JavaScript
+// console.log("--------------------------------------------------------------------------------");
+
+// course.setAvailability(false); // Montaser: Enrollment status changed for JavaScript
 
 
 
@@ -76,7 +84,7 @@ class NewsAgency {
         this.subscribers = [];
     };
 
-    static displayAgencies() { // class function 
+    static displayAgencies() { // class function
         console.log(`Numbers of Agencies: ${NewsAgency.Agencies.length}`);
         console.log('Agencies are: ', NewsAgency.Agencies);
     }
@@ -110,7 +118,7 @@ class Subscriber {
         Subscriber.people.push(name);
     };
 
-    static displayPersons() { // class function 
+    static displayPersons() { // class function
         console.log(`Numbers of People: ${Subscriber.people.length}`);
         console.log('People are: ', Subscriber.people);
     }
@@ -153,3 +161,9 @@ console.log('-------------------------------------------------------------------
 newsAgency1.notify("Breaking news: New product launched!");
 newsAgency1.notify("Sports news: Al-Ahly bought a new Good Striker!");
 newsAgency2.notify("Jobs News: FEDIS needs to a new Developer");
+console.log('------------------------------------------------------------------------\n');
+newsAgency1.unsubscribe(subscriber2);
+newsAgency1.displaySubscribers();
+console.log('------------------------------------------------------------------------\n');
+newsAgency1.notify("Weather news: It will be sunny tomorrow!");
+newsAgency2.notify("Politics news: New elections announced!");

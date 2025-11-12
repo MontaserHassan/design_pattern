@@ -1,4 +1,9 @@
-// Definition: Builder Pattern is a creational design pattern that allows for the step-by-step construction of complex objects. It provides a flexible way to create objects by composing them step by step, allowing for various configurations and customization.
+/**
+    Definition:
+        - Builder Pattern is a creational design pattern in software engineering.
+        - It allows for the step-by-step construction of complex objects.
+        It provides a flexible way to create objects by composing them step by step, allowing for various configurations and customization.
+*/
 
 
 class User {
