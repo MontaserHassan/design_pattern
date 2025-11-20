@@ -1,8 +1,8 @@
 /**
-    Defination:
-        - Adapter Pattern is a structural design pattern in software engineering
-        - It allows incompatible interfaces to work together.
-        - It acts as a bridge between two incompatible interfaces.
+  Definition:
+      - Adapter Pattern is a structural design pattern in software engineering
+      - It allows incompatible interfaces to work together.
+      - It acts as a bridge between two incompatible interfaces.
 */
 
 

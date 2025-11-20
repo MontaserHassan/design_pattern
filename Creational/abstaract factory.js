@@ -1,5 +1,5 @@
 /**
-  Defination:
+  Definition:
     - Abstract Factory Pattern is a creational design pattern in software engineering
     - It provides an interface for creating families of related objects without specifying their concrete classes.
     - It allows a client to create objects from multiple families without being tightly coupled to their specific implementations.

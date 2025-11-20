@@ -1,5 +1,5 @@
 /**
-    Defination:
+    Definition:
         - Circuit Breaker is a microservices resilience pattern in software engineering
         - It is used to detect failures and encapsulate the logic of preventing a failure from constantly recurring during maintenance, temporary external system failure, or unexpected system difficulties.
 */

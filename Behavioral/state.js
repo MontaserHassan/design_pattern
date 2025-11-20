@@ -1,5 +1,5 @@
 /**
-    Defination:
+    Definition:
         - State Pattern is a behavioral design pattern in software engineering
         - It allows an object to change its behavior when its internal state changes.
         - The object will appear to change its class.

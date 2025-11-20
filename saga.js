@@ -1,5 +1,5 @@
 /**
-    Defination:
+    Definition:
         - Saga is a Distributed Transaction Pattern or Microservices Data Management Pattern in software engineering
         - It is used to manage data consistency across multiple services without using distributed transactions.
         - It is a pattern that coordinates the execution of multiple microservices to ensure data integrity and consistency.

@@ -1,5 +1,8 @@
-// Defination: Prototype Pattern is a creational design pattern in software engineering , It used to create new objects by copying the prototype of an existing object.
-
+/**
+    Definition:
+        - Prototype Pattern is a creational design pattern in software engineering.
+        -It used to create new objects by copying the prototype of an existing object.
+*/
 
 
 class GameCharacter {

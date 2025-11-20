@@ -1,5 +1,5 @@
 /**
-    Defination :
+    Definition :
         - Strategy Pattern is a behavioral design pattern in software engineering.
         - It enables selecting an algorithm's behavior at runtime.
         - The strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable.

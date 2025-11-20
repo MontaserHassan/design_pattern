@@ -1,4 +1,5 @@
-/* Defination:
+/**
+  Definition:
     - Factory Pattern is a creational design pattern in software engineering.
     - It used to create objects without specifying their exact class.
     - It provides a way to create objects without having to know their concrete classes.
